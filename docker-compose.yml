@@ -2,17 +2,17 @@ version: "3.8"
 
 services:
   backend:
-    container_name: calc-backend
     build: ./backend
     ports:
       - "5000:5000"
+    container_name: calc-backend
     restart: always
 
   frontend:
-    container_name: calc-frontend
     build: ./frontend
     ports:
       - "3000:80"
+    container_name: calc-frontend
     depends_on:
       - backend
     restart: always
